@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_inicio">
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="com.example.inmobiliariasinapirest.ui.inicio.InicioFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_inicio" />
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.example.inmobiliariasinapirest.ui.perfil.PerfilFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="com.example.inmobiliariasinapirest.ui.salir.SalirFragment"
+        android:label="Salir"
+        tools:layout="@layout/fragment_salir" />
+    <fragment
+        android:id="@+id/nav_contratos"
+        android:name="com.example.inmobiliariasinapirest.ui.contratos.ContratosFragment"
+        android:label="Contratos"
+        tools:layout="@layout/fragment_contratos">
+        <action
+            android:id="@+id/action_nav_contratos_to_nav_detalle_contratos"
+            app:destination="@id/nav_detalle_contratos" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_detalle_contratos"
+        android:name="com.example.inmobiliariasinapirest.ui.contratos.DetalleContratosFragment"
+        android:label="Detalle Contratos"
+        tools:layout="@layout/fragment_detalle_contratos">
+        <action
+            android:id="@+id/action_nav_detalle_contratos_to_nav_contratos"
+            app:destination="@id/nav_contratos" />
+        <action
+            android:id="@+id/action_nav_detalle_contratos_to_pagosFragment"
+            app:destination="@id/nav_pagos" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_detalle_inmueble"
+        android:name="com.example.inmobiliariasinapirest.ui.inmuebles.DetalleInmuebleFragment"
+        android:label="Detalle Inmueble"
+        tools:layout="@layout/fragment_detalle_inmueble">
+        <action
+            android:id="@+id/action_nav_detalle_inmueble_to_nav_inmuebles"
+            app:destination="@id/nav_inmuebles" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_detalle_inquilino"
+        android:name="com.example.inmobiliariasinapirest.ui.inquilinos.DetalleInquilinoFragment"
+        android:label="Detalle Inquilino"
+        tools:layout="@layout/fragment_detalle_inquilino">
+        <action
+            android:id="@+id/action_nav_detalle_inquilino_to_nav_inquilinos"
+            app:destination="@id/nav_inquilinos" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_inmuebles"
+        android:name="com.example.inmobiliariasinapirest.ui.inmuebles.InmueblesFragment"
+        android:label="Inmuebles"
+        tools:layout="@layout/fragment_inmuebles">
+        <action
+            android:id="@+id/action_nav_inmuebles_to_nav_detalle_inmueble"
+            app:destination="@id/nav_detalle_inmueble" />
+        <action
+            android:id="@+id/action_nav_inmuebles_to_nav_crearInmueble"
+            app:destination="@id/nav_crearInmueble" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_inquilinos"
+        android:name="com.example.inmobiliariasinapirest.ui.inquilinos.InquilinosFragment"
+        android:label="Inquilinos"
+        tools:layout="@layout/fragment_inquilinos">
+        <action
+            android:id="@+id/action_nav_inquilinos_to_nav_detalle_inquilino"
+            app:destination="@id/nav_detalle_inquilino" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_pagos"
+        android:name="com.example.inmobiliariasinapirest.ui.contratos.PagosFragment"
+        android:label="Listado de pagos"
+        tools:layout="@layout/fragment_pagos">
+        <action
+            android:id="@+id/action_pagosFragment_to_nav_detalle_contratos"
+            app:destination="@id/nav_detalle_contratos" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_crearInmueble"
+        android:name="com.example.inmobiliariasinapirest.ui.inmuebles.CrearInmuebleFragment"
+        android:label="Crear Inmueble"
+        tools:layout="@layout/fragment_crear_inmueble">
+        <action
+            android:id="@+id/action_nav_crearInmueble_to_nav_inmuebles"
+            app:destination="@id/nav_inmuebles" />
+    </fragment>
+
+
+</navigation>
